@@ -1,4 +1,4 @@
-export default questions = [
+export const questions = [
   {
     question: "What is 2 + 2?",
     answers: [
