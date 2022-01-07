@@ -1,3 +1,4 @@
+// question bank for OSSLT Prep platform
 export const passages = [
   {
     passageText: "This is a sample text.",
