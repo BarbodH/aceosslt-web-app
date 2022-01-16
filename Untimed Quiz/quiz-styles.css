@@ -71,16 +71,20 @@ body.wrong {
   --hue: var(--hue-wrong);
 }
 
-.start-btn,
-.next-btn {
-  font-size: 1.5rem;
-  font-weight: bold;
+.start-btn {
+  font-size: 1.2rem;
   padding: 10px 20px;
+  margin: 0 auto; /* centralize start btn */
+}
+
+.next-btn {
+  font-size: 1.2rem;
+  /* padding: 10px 20px; */
 }
 
 .controls {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
 }
 

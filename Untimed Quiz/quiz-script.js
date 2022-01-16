@@ -2,6 +2,7 @@ import { passages } from "../Resources/question-bank.js";
 
 const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
+const proceedButton = document.getElementById("proceed-btn");
 const questionContainerElement = document.getElementById("question-container");
 const passageElement = document.getElementById("passage");
 const questionElement = document.getElementById("question");
@@ -19,6 +20,11 @@ nextButton.addEventListener("click", () => {
   setNextQuestion();
 });
 
+proceedButton.addEventListener("click", () => {
+  passageElement.classList.add("hide");
+  setNextQuestion();
+})
+
 function startQuiz() {
   startButton.classList.add("hide");
   shuffledPassages = shuffleArray(passages); // shuffle passages in the passages
@@ -32,14 +38,7 @@ function startQuiz() {
 
 function showPassage(currentPassage) {
   passageElement.innerText = currentPassage.passageText;
-  const button = document.createElement("button");
-  button.innerText = "Proceed to Questions";
-  button.classList.add("btn");
-  button.addEventListener("click", () => {
-    passageElement.classList.add("hide");
-    setNextQuestion();
-  });
-  answerButtonsElement.appendChild(button);
+  proceedButton.classList.remove("hide");
 }
 
 function showResult(score) {
@@ -70,6 +69,7 @@ function showQuestion(currentQuestion) {
 function resetState() {
   clearStatusClass(document.body); // document.body
   nextButton.classList.add("hide");
+  proceedButton.classList.add("hide");
   while (answerButtonsElement.firstChild) {
     answerButtonsElement.removeChild(answerButtonsElement.firstChild);
   }
