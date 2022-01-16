@@ -44,13 +44,7 @@ function showPassage(currentPassage) {
 
 function showResult(score) {
   questionContainerElement.classList.add("hide");
-  resultElement.innerText =
-    " " +
-    String(correctAnswers) +
-    " " +
-    String(totalAnswers) +
-    " " +
-    String(score);
+  resultElement.innerText = score + "%";
   resultContainerElement.classList.remove("hide");
 }
 
