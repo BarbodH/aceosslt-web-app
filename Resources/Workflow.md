@@ -1,6 +1,7 @@
 # OSSLT Preparation Platform
 
 Authors: Barbod Habibi, Aarin Jasikumar
+
 November 2021 - Present
 
 Main components of the application:
