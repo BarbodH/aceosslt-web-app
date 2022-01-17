@@ -4,6 +4,7 @@ const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
 const proceedButton = document.getElementById("proceed-btn");
 const questionContainerElement = document.getElementById("question-container");
+const introElement = document.getElementById("intro");
 const passageElement = document.getElementById("passage");
 const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-buttons");
@@ -14,7 +15,12 @@ let shuffledPassages, shuffledQuestions, currentQuestionIndex, score;
 let correctAnswers = 0,
   totalAnswers = 0;
 
-startButton.addEventListener("click", startQuiz);
+startButton.addEventListener("click", () => {
+  startQuiz();
+  introElement.classList.add("hide");
+});
+
+
 nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
   setNextQuestion();
