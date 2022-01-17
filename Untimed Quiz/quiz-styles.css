@@ -26,10 +26,12 @@ body {
 
 body.correct {
   --hue: var(--hue-correct);
+  transition: 1s;
 }
 
 body.wrong {
   --hue: var(--hue-wrong);
+  transition: 1s;
 }
 
 .container {
