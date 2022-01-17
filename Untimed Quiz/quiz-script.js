@@ -16,8 +16,8 @@ let correctAnswers = 0,
   totalAnswers = 0;
 
 startButton.addEventListener("click", () => {
-  startQuiz();
   introElement.classList.add("hide");
+  startQuiz();
 });
 
 
