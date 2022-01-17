@@ -62,6 +62,7 @@ body.wrong {
 
 .btn:hover {
   border-color: black;
+  cursor: pointer;
 }
 
 .btn.correct {
@@ -71,6 +72,10 @@ body.wrong {
 
 .btn.wrong {
   --hue: var(--hue-wrong);
+}
+
+.btn.selected {
+  --hue: var(--hue-correct);
 }
 
 .start-btn {

@@ -3,6 +3,7 @@ import { passages } from "../Resources/question-bank.js";
 const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
 const proceedButton = document.getElementById("proceed-btn");
+const submitButton = document.getElementById("submit-btn");
 const questionContainerElement = document.getElementById("question-container");
 const introElement = document.getElementById("intro");
 const passageElement = document.getElementById("passage");
@@ -12,8 +13,7 @@ const resultContainerElement = document.getElementById("result-container");
 const resultElement = document.getElementById("result");
 
 let shuffledPassages, shuffledQuestions, currentQuestionIndex, score;
-let correctAnswers = 0,
-  totalAnswers = 0;
+let answers = [false, false, false, false, false]; // * need to set the length dynamically based on quiz length
 
 startButton.addEventListener("click", () => {
   introElement.classList.add("hide");
@@ -28,7 +28,14 @@ nextButton.addEventListener("click", () => {
 
 proceedButton.addEventListener("click", () => {
   passageElement.classList.add("hide");
+  nextButton.classList.remove("hide");
   setNextQuestion();
+});
+
+submitButton.addEventListener("click", () => {
+  // display final result following submission
+  updateScore(answers);
+  showResult(score);
 })
 
 function startQuiz() {
@@ -48,6 +55,7 @@ function showPassage(currentPassage) {
 }
 
 function showResult(score) {
+  submitButton.classList.add("hide");
   questionContainerElement.classList.add("hide");
   resultElement.innerText = score + "%";
   resultContainerElement.classList.remove("hide");
@@ -74,27 +82,29 @@ function showQuestion(currentQuestion) {
 
 function resetState() {
   clearStatusClass(document.body); // document.body
-  nextButton.classList.add("hide");
+  // nextButton.classList.add("hide");
   proceedButton.classList.add("hide");
   while (answerButtonsElement.firstChild) {
     answerButtonsElement.removeChild(answerButtonsElement.firstChild);
   }
 }
 
-function selectAnswer(e) {
-  const selectedButton = e.target; // target
-  const correct = selectedButton.dataset.correct;
-  updateScore(correct);
-  setStatusClass(document.body, correct);
+function resetAnswers() {
   Array.from(answerButtonsElement.children).forEach((button) => {
-    setStatusClass(button, button.dataset.correct);
+    button.classList.remove("selected");
   });
-  if (shuffledQuestions.length > currentQuestionIndex + 1) {
-    nextButton.classList.remove("hide");
-  } else {
-    // display final result
-    score = (correctAnswers / totalAnswers) * 100;
-    showResult(score);
+}
+
+function selectAnswer(e) {
+  resetAnswers();
+  const selectedButton = e.target; // gets the selected button
+  selectedButton.classList.add("selected");
+  const correct = selectedButton.dataset.correct;
+  answers[currentQuestionIndex] = correct;
+  setStatusClass(document.body, correct); // changes background colour based on answer; helps with assessing functionality
+  if (shuffledQuestions.length <= currentQuestionIndex + 1) {
+    nextButton.classList.add("hide");
+    submitButton.classList.remove("hide");
   }
 }
 
@@ -112,11 +122,14 @@ function clearStatusClass(element) {
   element.classList.remove("wrong");
 }
 
-function updateScore(correct) {
-  totalAnswers++;
-  if (correct) {
-    correctAnswers++;
+function updateScore(answers) {
+  let correctAnswers = 0;
+  for (let i = 0; i < answers.length; i++) {
+    if (answers[i]) {
+      correctAnswers++;
+    }
   }
+  score = (correctAnswers / answers.length) * 100;
 }
 
 // Fisher-Yates algorithm - shuffle a given array
