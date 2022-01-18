@@ -17,6 +17,7 @@ const CHART = document.getElementById("doughnutChart");
 
 let shuffledPassages, shuffledQuestions, currentQuestionIndex, score, currentPassage;
 let answers = [false, false, false, false, false]; // * need to set the length dynamically based on quiz length
+let answersText = ["", "", "", "", ""] // * need to set the length dynamically based on quiz length
 
 startButton.addEventListener("click", () => {
   introElement.classList.add("hide");
@@ -112,6 +113,9 @@ function showQuestion(currentQuestion) {
     if (answer.correct) {
       button.dataset.correct = answer.correct;
     }
+    if (button.innerText == answersText[currentQuestionIndex]) {
+      button.classList.add("selected");
+    }
     button.addEventListener("click", selectAnswer);
     answerButtonsElement.appendChild(button);
   });
@@ -147,7 +151,9 @@ function selectAnswer(e) {
   const selectedButton = e.target; // gets the selected button
   selectedButton.classList.add("selected");
   const correct = selectedButton.dataset.correct;
+  // store the correctness and value of the selected answer
   answers[currentQuestionIndex] = correct;
+  answersText[currentQuestionIndex] = selectedButton.innerText;
   setStatusClass(document.body, correct); // changes background colour based on answer; helps with assessing functionality
 }
 
