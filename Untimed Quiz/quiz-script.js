@@ -11,6 +11,7 @@ const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-buttons");
 const resultContainerElement = document.getElementById("result-container");
 const resultElement = document.getElementById("result");
+const CHART = document.getElementById("doughnutChart");
 
 let shuffledPassages, shuffledQuestions, currentQuestionIndex, score;
 let answers = [false, false, false, false, false]; // * need to set the length dynamically based on quiz length
@@ -34,7 +35,24 @@ proceedButton.addEventListener("click", () => {
 
 submitButton.addEventListener("click", () => {
   // display final result following submission
-  updateScore(answers);
+  calculateScore(answers);
+  let pieChart = new Chart(CHART, {
+    type: "doughnut",
+    data: {
+      datasets: [
+        {
+          label: "Points",
+          backgroundColor: ['hsl(100, 100%, 50%)', 'grey'],
+          data: [score, (100 - score)]
+        }
+      ]
+    },
+    options: {
+      animation: {
+        animateScale: true
+      }
+    }
+  });
   showResult(score);
 })
 
@@ -122,7 +140,7 @@ function clearStatusClass(element) {
   element.classList.remove("wrong");
 }
 
-function updateScore(answers) {
+function calculateScore(answers) {
   let correctAnswers = 0;
   for (let i = 0; i < answers.length; i++) {
     if (answers[i]) {

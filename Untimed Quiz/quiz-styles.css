@@ -98,3 +98,9 @@ body.wrong {
 .hide {
   display: none;
 }
+
+#doughnutChart {
+  max-height: 200px;
+  height: 70%;
+  min-height: 200px;
+}
