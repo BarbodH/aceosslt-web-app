@@ -35,10 +35,6 @@ prevButton.addEventListener("click", () => {
 });
 
 proceedButton.addEventListener("click", () => {
-  passageElement.classList.add("hide");
-  questionElement.classList.remove("hide");
-  answerButtonsElement.classList.remove("hide");
-  nextButton.classList.remove("hide");
   setNextQuestion();
 });
 
@@ -77,26 +73,17 @@ function startQuiz() {
     shuffledQuestions = shuffleArray(currentPassage.questions); // shuffle questions of each passage
     currentQuestionIndex = 0;
     showPassage();
-    questionContainerElement.classList.remove("hide");
   }
 }
 
 function showPassage() {
-  questionElement.classList.add("hide");
-  answerButtonsElement.classList.add("hide");
-  passageElement.classList.remove("hide");
+  setDisplay("passage");
   passageElement.innerText = currentPassage.passageText;
-  nextButton.classList.add("hide");
-  passageButton.classList.add("hide");
-  proceedButton.classList.remove("hide");
 }
 
 function showResult(score) {
-  submitButton.classList.add("hide");
-  prevButton.classList.add("hide");
-  questionContainerElement.classList.add("hide");
   resultElement.innerText = score + "%";
-  resultContainerElement.classList.remove("hide");
+  setDisplay("result")
 }
 
 function setNextQuestion() {
@@ -119,22 +106,11 @@ function showQuestion(currentQuestion) {
     button.addEventListener("click", selectAnswer);
     answerButtonsElement.appendChild(button);
   });
-  if (currentQuestionIndex === shuffledQuestions.length - 1) {
-    nextButton.classList.add("hide");
-    submitButton.classList.remove("hide");
-  } else if (currentQuestionIndex === 0) {
-    prevButton.classList.add("hide");
-    passageButton.classList.remove("hide");
-  } else {
-    passageButton.classList.add("hide");
-    prevButton.classList.remove("hide");
-  }
+  setDisplay("question");
 }
 
 function resetState() {
   clearStatusClass(document.body); // document.body
-  // nextButton.classList.add("hide"); // commented out to keep next button during quiz
-  proceedButton.classList.add("hide");
   while (answerButtonsElement.firstChild) {
     answerButtonsElement.removeChild(answerButtonsElement.firstChild);
   }
@@ -191,3 +167,48 @@ const shuffleArray = (array) => {
   }
   return array;
 };
+
+function setDisplay(stage) {
+  if (stage === "passage") {
+    hideAll();
+    questionContainerElement.classList.remove("hide");
+    passageElement.classList.remove("hide");
+    proceedButton.classList.remove("hide");
+  } else if (stage === "question") {
+    hideAll();
+    questionContainerElement.classList.remove("hide");
+    questionElement.classList.remove("hide");
+    answerButtonsElement.classList.remove("hide");
+    if (currentQuestionIndex === 0) { // first question
+      passageButton.classList.remove("hide");
+      nextButton.classList.remove("hide");
+    } else if (currentQuestionIndex === shuffledQuestions.length - 1) { // last question
+      prevButton.classList.remove("hide");
+      submitButton.classList.remove("hide");
+    } else { // middle questions
+      prevButton.classList.remove("hide");
+      nextButton.classList.remove("hide");
+    }
+  } else if (stage === "result") {
+    hideAll();
+    resultContainerElement.classList.remove("hide");
+  }
+}
+
+// helper function for setDisplay
+function hideAll() {
+  // containers
+  questionContainerElement.classList.add("hide");
+  resultContainerElement.classList.add("hide");
+  // sub-containers
+  passageElement.classList.add("hide");
+  questionElement.classList.add("hide");
+  answerButtonsElement.classList.add("hide");
+  // controls
+  startButton.classList.add("hide");
+  nextButton.classList.add("hide");
+  prevButton.classList.add("hide");
+  proceedButton.classList.add("hide");
+  passageButton.classList.add("hide");
+  submitButton.classList.add("hide");
+}
