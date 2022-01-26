@@ -21,7 +21,22 @@ body {
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background-color: hsl(var(--hue), 100%, 20%);
+  background: linear-gradient(-45deg,hsl(14, 82%, 63%), hsl(337, 78%, 57%), hsl(196, 72%, 49%), hsl(166, 72%, 49%));
+	background-size: 400% 400%;
+	animation: gradient 60s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 body.correct {
@@ -52,16 +67,16 @@ body.wrong {
 
 .btn {
   --hue: var(--hue-neutral);
-  border: 2px solid hsl(var(--hue), 100%, 30%);
-  background-color: hsl(var(--hue), 100%, 50%);
+  border: 2px solid silver;
+  background-color: rgb(230, 230, 230);
   border-radius: 5px;
   padding: 5px 10px;
-  color: white;
   outline: none;
+  transition: 0.4s;
 }
 
 .btn:hover {
-  border-color: black;
+  border-color: hsl(260, 80%, 45%);
   cursor: pointer;
 }
 
@@ -75,16 +90,20 @@ body.wrong {
 }
 
 .btn.selected {
-  --hue: var(--hue-correct);
+  border-color: hsl(260, 80%, 45%);
+  background-color: hsl(260, 55%, 85%);
 }
 
 .start-btn {
   font-size: 1.2rem;
   padding: 10px 20px;
-  margin: 0 auto; /* centralize start btn */
+  /* margin: 0 auto; centralize start btn */
 }
 
-.next-btn {
+.control-btn {
+  background-color: hsl(260, 80%, 45%);
+  border-color:hsl(260, 80%, 45%);
+  color: white;
   font-size: 1.2rem;
   margin: 2px;
 }
