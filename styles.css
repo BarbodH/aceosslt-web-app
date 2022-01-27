@@ -13,6 +13,7 @@
 }
 
 .navbar {
+    min-width: 500px; /* change to something more dynamic */
     width: 85%;
     margin: auto;
     padding: 35px 0;
@@ -22,7 +23,8 @@
 }
 
 .logo {
-    width: 120px;
+    width: 160px;
+    color: white;
     cursor: pointer;
 }
 
@@ -43,7 +45,7 @@
     content: "";
     height: 3px;
     width: 0;
-    background: #009688;
+    background: hsl(260, 80%, 45%);
     position: absolute;
     left: 0;
     bottom: -10px;
@@ -81,7 +83,7 @@ button {
     margin: 20px 10px;
     border-radius: 25px;
     font-weight: bold;
-    border: 2px solid #009688;
+    border: 2px solid hsl(260, 80%, 45%);
     background: transparent;
     color: white;
     cursor: pointer;
@@ -90,7 +92,7 @@ button {
 }
 
 span {
-    background: #009688;
+    background: hsl(260, 80%, 45%);
     height: 100%;
     width: 0;
     border-radius: 25px;
