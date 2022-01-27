@@ -1,4 +1,4 @@
-import { passages } from "../Resources/question-bank.js";
+import { passages } from "../questionbanks/question-bank.js";
 
 const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
