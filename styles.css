@@ -7,7 +7,7 @@
 .banner {
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)), url(images/background.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url(images/background.jpeg);
     background-size: cover;
     background-position: center;
 }
@@ -45,7 +45,7 @@
     content: "";
     height: 3px;
     width: 0;
-    background: hsl(260, 80%, 45%);
+    background: hsl(260, 60%, 50%);
     position: absolute;
     left: 0;
     bottom: -10px;
@@ -83,7 +83,7 @@ button {
     margin: 20px 10px;
     border-radius: 25px;
     font-weight: bold;
-    border: 2px solid hsl(260, 80%, 45%);
+    border: 4px solid hsl(260, 60%, 50%);
     background: transparent;
     color: white;
     cursor: pointer;
@@ -92,7 +92,7 @@ button {
 }
 
 span {
-    background: hsl(260, 80%, 45%);
+    background: hsl(260, 60%, 50%);
     height: 100%;
     width: 0;
     border-radius: 25px;
@@ -109,4 +109,17 @@ button:hover span {
 
 button:hover {
     border: none;
+}
+
+.about {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white;
+}
+
+.about p {
+    margin: 10px auto;
 }
