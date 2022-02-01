@@ -13,17 +13,17 @@
 }
 
 .navbar {
+    background-color: white;
     min-width: 500px; /* change to something more dynamic */
-    width: 85%;
     margin: auto;
-    padding: 35px 0;
+    padding: 10px 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .logo {
-    width: 160px;
+    width: 250px;
     color: white;
     cursor: pointer;
 }
@@ -37,7 +37,8 @@
 
 .navbar ul li a {
     text-decoration: none;
-    color: white;
+    color: black;
+    font-weight: bold;
     text-transform: uppercase;
 }
 
