@@ -14,9 +14,8 @@ const resultContainerElement = document.getElementById("result-container");
 const resultElement = document.getElementById("result");
 const CHART = document.getElementById("doughnutChart");
 
-let shuffledPassages, shuffledQuestions, currentQuestionIndex, score, currentPassage, selectedPassage;
-let answers = [false, false, false, false, false]; // * need to set the length dynamically based on quiz length
-let answersText = ["", "", "", "", ""] // * need to set the length dynamically based on quiz length
+// declare global variables
+let shuffledQuestions, currentQuestionIndex, score, currentPassage, answers, answersText;
 
 // display the list of passages for the user to choose
 passages.forEach((passage) => {
@@ -25,6 +24,8 @@ passages.forEach((passage) => {
   introElement.appendChild(link);
   link.addEventListener("click", () => {
     currentPassage = passage;
+    answers = Array(passage.questions.length).fill(false);
+    answersText = Array(passage.questions.length).fill("");
     startQuiz();
   })
 })
