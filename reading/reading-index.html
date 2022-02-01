@@ -10,40 +10,38 @@
     <title>Quiz App</title>
   </head>
   <body>
-    <div class="container">
-      <div id="intro">
-        <p>The reading comprehension section consists of three randomly selected passages followed by five multiple choice questions.</p>
-        <p>Good luck!</p>
+    <div class="banner">
+      <div class="navbar">
+        <img src="../images/logo.png" class="logo">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../homepage/about.html">About</a></li>
+          <li><a href="../homepage/contact.html">Contact</a></li>
+        </ul>
       </div>
-      <div id="question-container" class="hide">
-        <div id="passage"></div>
-        <div id="question"></div>
-        <div id="answer-buttons" class="btn-grid"></div>
-      </div>
-      <div class="controls">
-        <button id="start-btn" class="btn control-btn start-btn">Start Quiz</button>
-        <button id="prev-btn" class="btn control-btn hide">Previous</button>
-        <button id="passage-btn" class="btn control-btn hide">View Passage</button>
-        <button id="next-btn" class="btn control-btn hide">Next Question</button>
-        <button id="proceed-btn" class="btn control-btn hide">Proceed to Questions</button>
-        <button id="submit-btn" class="btn control-btn hide">Submit</button>
-      </div>
-      <div id="result-container" class="hide">
-        <canvas id="doughnutChart"></canvas>
-        <div id="result"></div>
+      <div class="container">
+        <div id="intro">
+          <p>The reading comprehension section consists of three randomly selected passages followed by five multiple choice questions.</p>
+          <p>Good luck!</p>
+        </div>
+        <div id="question-container" class="hide">
+          <div id="passage"></div>
+          <div id="question"></div>
+          <div id="answer-buttons" class="btn-grid"></div>
+        </div>
+        <div class="controls">
+          <button id="start-btn" class="btn control-btn start-btn">Start Quiz</button>
+          <button id="prev-btn" class="btn control-btn hide">Previous</button>
+          <button id="passage-btn" class="btn control-btn hide">View Passage</button>
+          <button id="next-btn" class="btn control-btn hide">Next Question</button>
+          <button id="proceed-btn" class="btn control-btn hide">Proceed to Questions</button>
+          <button id="submit-btn" class="btn control-btn hide">Submit</button>
+        </div>
+        <div id="result-container" class="hide">
+          <canvas id="doughnutChart"></canvas>
+          <div id="result"></div>
+        </div>
       </div>
     </div>
-    <ul class="circles">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
   </body>
 </html>
