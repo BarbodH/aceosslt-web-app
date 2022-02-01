@@ -1,6 +1,5 @@
 import { passages } from "../questionbanks/question-bank.js";
 
-const startButton = document.getElementById("start-btn");
 const nextButton = document.getElementById("next-btn");
 const prevButton = document.getElementById("prev-btn");
 const proceedButton = document.getElementById("proceed-btn");
@@ -15,14 +14,20 @@ const resultContainerElement = document.getElementById("result-container");
 const resultElement = document.getElementById("result");
 const CHART = document.getElementById("doughnutChart");
 
-let shuffledPassages, shuffledQuestions, currentQuestionIndex, score, currentPassage;
+let shuffledPassages, shuffledQuestions, currentQuestionIndex, score, currentPassage, selectedPassage;
 let answers = [false, false, false, false, false]; // * need to set the length dynamically based on quiz length
 let answersText = ["", "", "", "", ""] // * need to set the length dynamically based on quiz length
 
-startButton.addEventListener("click", () => {
-  introElement.classList.add("hide");
-  startQuiz();
-});
+// display the list of passages for the user to choose
+passages.forEach((passage) => {
+  const link  = document.createElement("button");
+  link.innerText = passage.title;
+  introElement.appendChild(link);
+  link.addEventListener("click", () => {
+    currentPassage = passage;
+    startQuiz();
+  })
+})
 
 nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
@@ -66,14 +71,10 @@ submitButton.addEventListener("click", () => {
 })
 
 function startQuiz() {
-  startButton.classList.add("hide");
-  shuffledPassages = shuffleArray(passages); // shuffle passages in the passages
-  for (let i = 0; i < passages.length; i++) {
-    currentPassage = passages[i];
-    shuffledQuestions = shuffleArray(currentPassage.questions); // shuffle questions of each passage
-    currentQuestionIndex = 0;
-    showPassage();
-  }
+  introElement.classList.add("hide");
+  shuffledQuestions = shuffleArray(currentPassage.questions); // shuffle questions of selected passage
+  currentQuestionIndex = 0;
+  showPassage();
 }
 
 function showPassage() {
@@ -110,7 +111,6 @@ function showQuestion(currentQuestion) {
 }
 
 function resetState() {
-  clearStatusClass(document.body); // document.body
   while (answerButtonsElement.firstChild) {
     answerButtonsElement.removeChild(answerButtonsElement.firstChild);
   }
@@ -130,21 +130,6 @@ function selectAnswer(e) {
   // store the correctness and value of the selected answer
   answers[currentQuestionIndex] = correct;
   answersText[currentQuestionIndex] = selectedButton.innerText;
-  setStatusClass(document.body, correct); // changes background colour based on answer; helps with assessing functionality
-}
-
-function setStatusClass(element, correct) {
-  clearStatusClass(element);
-  if (correct) {
-    element.classList.add("correct");
-  } else {
-    element.classList.add("wrong");
-  }
-}
-
-function clearStatusClass(element) {
-  element.classList.remove("correct");
-  element.classList.remove("wrong");
 }
 
 function calculateScore(answers) {
@@ -157,7 +142,7 @@ function calculateScore(answers) {
   score = (correctAnswers / answers.length) * 100;
 }
 
-// Fisher-Yates algorithm - shuffle a given array
+// Fisher-Yates algorithm - shuffle the array of questions
 const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -205,7 +190,6 @@ function hideAll() {
   questionElement.classList.add("hide");
   answerButtonsElement.classList.add("hide");
   // controls
-  startButton.classList.add("hide");
   nextButton.classList.add("hide");
   prevButton.classList.add("hide");
   proceedButton.classList.add("hide");
