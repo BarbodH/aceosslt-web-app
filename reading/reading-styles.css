@@ -28,69 +28,8 @@
   box-shadow: 0 0 10px 2px;
 }
 
-.container2 {
-  width: 800px;
-  max-width: 80%;
-  background-color: white;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 0 10px 2px; /* [x-offset] [y-offset] [blur] [spread] */
-}
-
-.btn-grid {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 10px;
-  margin: 20px 0;
-}
-
-.btn {
-  border: 2px solid silver;
-  background-color: rgb(230, 230, 230);
-  border-radius: 5px;
-  padding: 5px 10px;
-  outline: none;
-  transition: 0.4s;
-}
-
-.btn:hover {
-  border-color: hsl(260, 80%, 45%);
-  cursor: pointer;
-}
-
-.btn.selected {
-  border-color: hsl(260, 80%, 45%);
-  background-color: hsl(260, 55%, 85%);
-}
-
-.start-btn {
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  /* margin: 0 auto; centralize start btn */
-}
-
-.control-btn {
-  background-color: hsl(260, 80%, 45%);
-  border-color:hsl(260, 80%, 45%);
-  color: white;
-  font-size: 1.2rem;
-  margin: 2px;
-}
-
-.controls {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-}
-
-.hide {
-  display: none;
-}
-
-#doughnutChart {
-  max-height: 200px;
-  height: 70%;
-  min-height: 200px;
+.container p {
+  padding-bottom: 15px;
 }
 
 .navbar {
@@ -137,4 +76,66 @@
 
 .navbar ul li:hover::after {
   width: 100%;
+}
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.btn {
+  border: 2px solid silver;
+  background-color: rgb(230, 230, 230);
+  border-radius: 5px;
+  padding: 5px 10px;
+  outline: none;
+  transition: 0.4s;
+}
+
+.btn-intro {
+  width: 100%;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.btn:hover {
+  border-color: hsl(260, 80%, 45%);
+  cursor: pointer;
+}
+
+.btn.selected {
+  border-color: hsl(260, 80%, 45%);
+  background-color: hsl(260, 55%, 85%);
+}
+
+.start-btn {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  /* margin: 0 auto; centralize start btn */
+}
+
+.control-btn {
+  background-color: hsl(260, 80%, 45%);
+  border-color:hsl(260, 80%, 45%);
+  color: white;
+  font-size: 1.2rem;
+  margin: 2px;
+}
+
+.controls {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}
+
+#doughnutChart {
+  max-height: 200px;
+  height: 70%;
+  min-height: 200px;
 }

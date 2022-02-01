@@ -19,10 +19,11 @@ let shuffledQuestions, currentQuestionIndex, score, currentPassage, answers, ans
 
 // display the list of passages for the user to choose
 passages.forEach((passage) => {
-  const link  = document.createElement("button");
-  link.innerText = passage.title;
-  introElement.appendChild(link);
-  link.addEventListener("click", () => {
+  const choosePassage  = document.createElement("button");
+  choosePassage.classList.add("btn", "btn-intro");
+  choosePassage.innerText = passage.title;
+  introElement.appendChild(choosePassage);
+  choosePassage.addEventListener("click", () => {
     currentPassage = passage;
     answers = Array(passage.questions.length).fill(false);
     answersText = Array(passage.questions.length).fill("");
