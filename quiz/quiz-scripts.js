@@ -113,7 +113,7 @@ function showQuestion(currentQuestion) {
 }
 
 function resetState() {
-  while (answerButtonsElement.firstChild) {
+  while (answerButtonsElement.firstChild) { // first child?
     answerButtonsElement.removeChild(answerButtonsElement.firstChild);
   }
 }
