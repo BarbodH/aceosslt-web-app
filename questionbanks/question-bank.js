@@ -50,5 +50,56 @@ export const passages = [
         ]
       }
     ]
+  }, {
+    title: "A Huge Mural Marks a Graffiti Philosophy in Montreal",
+    date: "March 2015, Section I Reading",
+    passageText: "They are graffiti artists. They spray-paint buildings. And they are paid by taxpayers. Their latest work, Our Lady of Grace, unveiled in November 2011, transformed a dingy, beige brick wall in Montreal’s west end into a six-storey canvas that hundreds now stop to admire. While Montreal can be tough on illegal graffiti and tagging, the city has developed a relationship with graffiti artists, who are adamant that their genre is legitimate. “It’s the same as a paintbrush, and we are showing our talent,” said the artist who only gave his name as Fluke. Beginning in 2006, Montreal budgeted $1.2 million to attack the problem of graffiti. That includes about $150 000 for murals. The Our Lady of Grace fresco cost the city $26 000 and took 400 cans of spray paint to complete. The mural shows the lady in a flowing robe, surrounded by scenes of the urban landscape and reminders—such as Caribbean birds—of the multicultural character of the area. New murals are going up regularly in Montreal. In August and September 2011, walls honouring singer, songwriter and actor Raymond Levesque and jazz artist Oscar Peterson went up. “We turn an energy that might be negative into one that’s positive,” said an executive from the mayor’s office. Still, Fluke worries about his art form. Old factories are turning into condos. Politicians crack down looking for votes. “Graffiti as a subculture is growing dramatically, but we have less space to do it. [Murals] like this allow our voice to be heard,” he said.",
+    questions: [
+      {
+        question: "Why did Montreal establish a relationship with graffiti artists?",
+        answers: [
+          { text: "to deal with vandalism", correct: true },
+          { text: "to help politicians gain votes", correct: false },
+          { text: "to honour famous entertainers", correct: false },
+          { text: "to introduce citizens to local art", correct: false }
+        ]
+      },
+      {
+        question: "Which word is closest in meaning to “adamant” as used in paragraph 3?",
+        answers: [
+          { text: "critical", correct: false },
+          { text: "insistent", correct: true },
+          { text: "annoyed", correct: false },
+          { text: "surprised", correct: false }
+        ]
+      },
+      {
+        question: "What feature of 'Our Lady of Grace' reflects an aspect of the neighbourhood’s diverse population?",
+        answers: [
+          { text: "the work's title", correct: false },
+          { text: "the urban location", correct: false },
+          { text: "the Caribbean birds", correct: true },
+          { text: "the use of spray paint", correct: false }
+        ]
+      },
+      {
+        question: "How is the information in paragraph 7 organized?",
+        answers: [
+          { text: "cause and effect", correct: false },
+          { text: "question and answer", correct: false },
+          { text: "comparison and contrast", correct: false },
+          { text: "statement and explanation", correct: true }
+        ]
+      },
+      {
+        question: "What is the main idea of this selection?",
+        answers: [
+          { text: "Artwork is very expensive.", correct: false },
+          { text: "Artists require lots of space.", correct: false },
+          { text: "Co-operation reduces conflict.", correct: true },
+          { text: "Interest groups block progress.", correct: false }
+        ]
+      }
+    ]
   }
 ];
