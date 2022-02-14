@@ -80,8 +80,15 @@ function startQuiz() {
 }
 
 function showPassage() {
+  if (passageElement.firstChild == null) {
+    const title = document.createElement("h1");
+    const text = document.createElement("p");
+    title.innerText = currentPassage.title;
+    text.innerText = currentPassage.passageText;
+    passageElement.appendChild(title);
+    passageElement.appendChild(text);
+  }
   setDisplay("passage");
-  passageElement.innerText = currentPassage.passageText;
 }
 
 function showResult(score) {
