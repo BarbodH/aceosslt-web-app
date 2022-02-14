@@ -134,6 +134,10 @@
   display: none;
 }
 
+.active {
+  background-color: #7a90fd;
+}
+
 #doughnutChart {
   max-height: 200px;
   height: 70%;

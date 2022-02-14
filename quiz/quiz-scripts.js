@@ -10,6 +10,8 @@ const introElement = document.getElementById("intro");
 const passageElement = document.getElementById("passage");
 const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-buttons");
+const progressBarElement = document.getElementById("progress-bar");
+const pbItemElements = document.getElementById("pb-list").querySelectorAll("li");
 const resultContainerElement = document.getElementById("result-container");
 const resultElement = document.getElementById("result");
 const CHART = document.getElementById("doughnutChart");
@@ -29,7 +31,18 @@ passages.forEach((passage) => {
     answersText = Array(passage.questions.length).fill("");
     startQuiz();
   })
-})
+});
+
+pbItemElements.forEach(item => {
+  item.addEventListener("click", () => {
+    if (item.innerText === "P") {
+      showPassage();
+    } else {
+      currentQuestionIndex = parseInt(item.innerText) - 1;
+      setNextQuestion();
+    }
+  })
+});
 
 nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
