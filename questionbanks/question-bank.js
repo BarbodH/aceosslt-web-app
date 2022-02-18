@@ -1,57 +1,6 @@
 // question bank for OSSLT Prep platform
 export const passages = [
-  {
-    title: "An Animator from Scarborough",
-    date: "April 2013, Section I Reading",
-    passageText: "Over 1500 applications from around the world flood George Lucas's animation academy each year (Lucas created the Star Wars films), but only four applicants are selected for internships. Randolph Lizarda, 21, from Scarborough, was one of them. “I'm very excited. I'll be working in the LucasArts division animating video games, although I don't know what we're working on. They wouldn't tell me—it's confidential,” Lizarda said on a break from his Sheridan College class. As a child, Lizarda liked to draw cartoons. Now he is learning to transfer his drawing ability to the computer. “I was into [art] when I was little; then I got more into it in high school. In Grade 10, I took one of those career surveys to find out where you fit in. I fit into the animation industry,” he said. Lizarda aspires to one day work for an animation company such as Pixar or DreamWorks. “He's an excellent student,” said Dave Quesnelle, who teaches animation and is one of Lizarda's professors. Lizarda stood out after handing in his first assignment, a 10-second action sequence of a muscular circus performer balancing on a ball before jumping through a hoop of fire. This clip was the first segment on the demo reel he submitted to Lucasfilm. “I had a really good sense of his storytelling. He had the basic principles of animation [but] it was also comical. And that's our job. Anyone can make a picture move, but to make it entertaining, that's the craft of an animator.”",
-    questions: [
-      {
-        question: "What will the focus of Lizarda's internship be?",
-        answers: [
-          { text: "films", correct: false },
-          { text: "cartoons", correct: false },
-          { text: "video games", correct: true },
-          { text: "action sequences", correct: false }
-        ]
-      },
-      {
-        question: "Which word is closest in meaning to “confidential” as used in paragraph 2?",
-        answers: [
-          { text: "secret", correct: true },
-          { text: "personal", correct: false },
-          { text: "confusing", correct: false },
-          { text: "professional", correct: false }
-        ]
-      },
-      {
-        question: "According to Quesnelle, what ability is most important for an animator?",
-        answers: [
-          { text: "creating characters", correct: false },
-          { text: "pleasing an audience", correct: true },
-          { text: "developing a demo reel", correct: false },
-          { text: "programming computers", correct: false }
-        ]
-      },
-      {
-        question: "What do Quesnelle's quotes indicate about him?",
-        answers: [
-          { text: "He knows a lot about internships", correct: false },
-          { text: "He focuses on technical aspects of animation", correct: false },
-          { text: "He recognizes skill and creativity in his students", correct: true },
-          { text: "He suggests interesting storylines to his students", correct: false }
-        ]
-      },
-      {
-        question: "Which paragraph presents information in chronological order?",
-        answers: [
-          { text: "Paragraph 2", correct: false },
-          { text: "Paragraph 4", correct: true },
-          { text: "Paragraph 5", correct: false },
-          { text: "Paragraph 7", correct: false }
-        ]
-      }
-    ]
-  }, {
+   {
     title: "A Huge Mural Marks a Graffiti Philosophy in Montreal",
     date: "March 2015, Section I Reading",
     passageText: "[1] They are graffiti artists. They spray-paint buildings. And they are paid by taxpayers. Their latest work, Our Lady of Grace, unveiled in November 2011, transformed a dingy, beige brick wall in Montreal's west end into a six-storey canvas that hundreds now stop to admire. While Montreal can be tough on illegal graffiti and tagging, the city has developed a relationship with graffiti artists, who are adamant that their genre is legitimate. “It's the same as a paintbrush, and we are showing our talent,” said the artist who only gave his name as Fluke.\n[2] Beginning in 2006, Montreal budgeted $1.2 million to attack the problem of graffiti. That includes about $150 000 for murals. The Our Lady of Grace fresco cost the city $26 000 and took 400 cans of spray paint to complete. The mural shows the lady in a flowing robe, surrounded by scenes of the urban landscape and reminders—such as Caribbean birds—of the multicultural character of the area. New murals are going up regularly in Montreal. In August and September 2011, walls honouring singer, songwriter and actor Raymond Levesque and jazz artist Oscar Peterson went up. “We turn an energy that might be negative into one that's positive,” said an executive from the mayor's office.\n[3] Still, Fluke worries about his art form. Old factories are turning into condos. Politicians crack down looking for votes. “Graffiti as a subculture is growing dramatically, but we have less space to do it. [Murals] like this allow our voice to be heard,” he said.",
@@ -247,6 +196,137 @@ export const passages = [
           { text: "Chainey's last place finish is a victory.", correct: true },
           { text: "Chainey's kidney disease is a curable illness.", correct: false },
           { text: "Chainey has qualified for the national championships.", correct: false }
+        ]
+      }
+    ]
+  }, {
+    title: "An Animator from Scarborough",
+    date: "April 2013, Section I Reading",
+    passageText: "Over 1500 applications from around the world flood George Lucas's animation academy each year (Lucas created the Star Wars films), but only four applicants are selected for internships. Randolph Lizarda, 21, from Scarborough, was one of them. “I'm very excited. I'll be working in the LucasArts division animating video games, although I don't know what we're working on. They wouldn't tell me—it's confidential,” Lizarda said on a break from his Sheridan College class. As a child, Lizarda liked to draw cartoons. Now he is learning to transfer his drawing ability to the computer. “I was into [art] when I was little; then I got more into it in high school. In Grade 10, I took one of those career surveys to find out where you fit in. I fit into the animation industry,” he said. Lizarda aspires to one day work for an animation company such as Pixar or DreamWorks. “He's an excellent student,” said Dave Quesnelle, who teaches animation and is one of Lizarda's professors. Lizarda stood out after handing in his first assignment, a 10-second action sequence of a muscular circus performer balancing on a ball before jumping through a hoop of fire. This clip was the first segment on the demo reel he submitted to Lucasfilm. “I had a really good sense of his storytelling. He had the basic principles of animation [but] it was also comical. And that's our job. Anyone can make a picture move, but to make it entertaining, that's the craft of an animator.”",
+    questions: [
+      {
+        question: "What will the focus of Lizarda's internship be?",
+        answers: [
+          { text: "films", correct: false },
+          { text: "cartoons", correct: false },
+          { text: "video games", correct: true },
+          { text: "action sequences", correct: false }
+        ]
+      },
+      {
+        question: "Which word is closest in meaning to “confidential” as used in paragraph 2?",
+        answers: [
+          { text: "secret", correct: true },
+          { text: "personal", correct: false },
+          { text: "confusing", correct: false },
+          { text: "professional", correct: false }
+        ]
+      },
+      {
+        question: "According to Quesnelle, what ability is most important for an animator?",
+        answers: [
+          { text: "creating characters", correct: false },
+          { text: "pleasing an audience", correct: true },
+          { text: "developing a demo reel", correct: false },
+          { text: "programming computers", correct: false }
+        ]
+      },
+      {
+        question: "What do Quesnelle's quotes indicate about him?",
+        answers: [
+          { text: "He knows a lot about internships", correct: false },
+          { text: "He focuses on technical aspects of animation", correct: false },
+          { text: "He recognizes skill and creativity in his students", correct: true },
+          { text: "He suggests interesting storylines to his students", correct: false }
+        ]
+      },
+      {
+        question: "Which paragraph presents information in chronological order?",
+        answers: [
+          { text: "Paragraph 2", correct: false },
+          { text: "Paragraph 4", correct: true },
+          { text: "Paragraph 5", correct: false },
+          { text: "Paragraph 7", correct: false }
+        ]
+      }
+    ]
+  }, {
+    title: "Practical Woman Donned It First",
+    date: "May 2013, Section III Reading",
+    passageText: "On page 25 of the <em>Hockey News</em> is a black-and-white photograph of my grandmother, wearing goalie pads and a striped hockey sweater. The article describes how, while playing for Queen's University in 1927, my grandmother shocked fans by wearing a mask.\n \“The first hockey netminder interested in saving face looks to have been Elizabeth Graham,\” the article reads. \“It would appear the father of the goalie mask was in fact a woman.\”\n Annie Elizabeth Graham grew up in Arnprior, in the Ottawa Valley. At Queen's University, she joined the ladies' hockey team. A photo taken at the time shows her team horsing around on outdoor ice, wearing their jerseys and wool bloomers, looking like they're having a blast.\n Hockey players didn't even wear helmets back then, but on February 7, 1927, she stepped onto the ice wearing a metal mask. The <em>Kingston Whig-Standard</em> noted how she \“gave the fans a surprise,\” but the newspaper conceded her good sense. \“It was safety first with her,\” it said. It was actually a fencing mask and she wore it to protect her teeth. Her father had already spent so much to send her to university that she didn't want to add to his burden by racking up dental bills.\n Three years after her masked debut, Clint Benedict of the Montreal Maroons, after stopping too many pucks with his face, wore a leather mask in a game against the New York Rangers. It wasn't until the 1950s, however, that National Hockey League (NHL) goalies started seriously experimenting with masks, led by the legendary Jacques Plante.\n <em>Legends</em>, the Hockey Hall of Fame's official program, claims that when it comes to goaltender masks, Elizabeth Graham truly was \“the mother of invention.\” But she was not widely credited for it because women's hockey was just not that popular in the 1920s, drawing only about 1000 fans to places like the Montreal Forum, which had a seating capacity of 9300 then.\n Like a lot of innovators, my grandmother passed away before she was recognized for her contribution. Her role as the pioneer of the goalie mask was always family legend, but she is now getting her due. The Hockey Hall of Fame has named her one of a dozen \“Notable Women Hockey Players,\” and she is featured in a new book called <em>Saving Face: The Art and History of the Goalie Mask</em>.\n"
+    + "During the 2004 NHL lockout, a reader wrote to <em>Toronto Sun</em> columnist Earl McRae, asking him to settle the question over whether Benedict or Plante was the first goalie to wear a mask. \“You're both wrong,\” Mr. McRae wrote, explaining how my grandmother had used a mask long before either goalie.\n Grandma would have laughed at that. She had a great big laugh that could fill a house. She was a spirited lady, a teacher by profession. She embodied the traits of strength, confidence and prudence. When we were kids, she wouldn't even let us go swimming in Marshall Bay until an hour after lunch because we might get cramps and drown. And in sport, she felt compelled to shield her teeth from flying pucks.\n I'm not a goalie, but I love the sport. My weekends begin at 6:30 a.m. in the dressing room of a suburban arena where I sip coffee and pull on toxic-smelling hockey equipment for a friendly game of dark shirts against light shirts. I wear a helmet—with a mask. On a recent Saturday, I asked my teammates whether they'd seen the latest <em>Hockey News</em>. \“My grandma's in there,\” I said as we laced up. There aren't very many guys who can say that.",
+    questions: [
+      {
+        question: "What is the main purpose of this selection?",
+        answers: [
+          { text: "to recognize a female innovator", correct: true },
+          { text: "to explain how goalie masks are made", correct: false },
+          { text: "to show the role of newspaper reporting in sport", correct: false },
+          { text: "to encourage readers to learn more about their families", correct: false }
+        ]
+      }, {
+        question: "Why does the author refer to Graham as a “pioneer” in paragraph 7?",
+        answers: [
+          { text: "She initiated a trend.", correct: true },
+          { text: "She lived several decades ago.", correct: false },
+          { text: "She was the first female goaltender.", correct: false },
+          { text: "Few women attended university in the 1920s.", correct: false }
+        ]
+      },{
+        question: "Which publication first reported a hockey goalie wearing a mask?",
+        answers: [
+          { text: "<em>Legends</em>", correct: false },
+          { text: "<em>The Toronto Sun</em>", correct: false },
+          { text: "<em>The Hockey News</em>", correct: false },
+          { text: "<em>The Kingston Whig-Standard</em>", correct: true }
+        ]
+      },{
+        question: "Who popularized the use of masks?",
+        answers: [
+          { text: "Plante", correct: true },
+          { text: "McRae", correct: false },
+          { text: "Graham", correct: false },
+          { text: "Benedict", correct: false }
+        ]
+      },{
+        question: "To whom does “both” refer in “You're both wrong” (paragraph 8)?",
+        answers: [
+          { text: "McRae and a reader", correct: false },
+          { text: "Benedict and Plante", correct: false },
+          { text: "a reader and someone else", correct: true },
+          { text: "Graham and another goalie", correct: false }
+        ]
+      },{
+        question: "At what point in the selection does the author shift from an objective to a more personal perspective?",
+        answers: [
+          { text: "paragraph 3", correct: false },
+          { text: "paragraph 5", correct: false },
+          { text: "paragraph 6", correct: false },
+          { text: "paragraph 9", correct: true }
+        ]
+      },{
+        question: "What phrase from the selection refers to Elizabeth's “prudence” (paragraph 9)?",
+        answers: [
+          { text: "“safety first”", correct: true },
+          { text: "“getting her due”", correct: false },
+          { text: "“horsing around”", correct: false },
+          { text: "“mother of invention”", correct: false }
+        ]
+      },{
+        question: "What is the function of the dash used in paragraph 10?",
+        answers: [
+          { text: "to build suspense", correct: false },
+          { text: "to link two unrelated facts", correct: false },
+          { text: "to emphasize a significant detail", correct: true },
+          { text: "to indicate an interruption in thought", correct: false }
+        ]
+      },{
+        question: "What idea links the first and last paragraphs?",
+        answers: [
+          { text: "a belief in the importance of news", correct: false },
+          { text: "an opinion about women's hockey", correct: false },
+          { text: "a comparison of hockey equipment", correct: false },
+          { text: "the author's connection to the story", correct: true }
         ]
       }
     ]

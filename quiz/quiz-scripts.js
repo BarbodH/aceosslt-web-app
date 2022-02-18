@@ -135,7 +135,7 @@ function showQuestion(currentQuestion) {
   questionElement.innerHTML = (currentQuestionIndex + 1) + ") " + currentQuestion.question;
   currentQuestion.answers.forEach((answer) => {
     const button = document.createElement("button");
-    button.innerText = answer.text;
+    button.innerHTML = answer.text;
     button.classList.add("btn");
     if (answer.correct) {
       button.dataset.correct = answer.correct;
