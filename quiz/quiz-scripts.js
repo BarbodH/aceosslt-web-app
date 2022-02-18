@@ -23,7 +23,11 @@ let shuffledQuestions, currentQuestionIndex, score, currentPassage, answers, ans
 passages.forEach((passage) => {
   const choosePassage  = document.createElement("button");
   choosePassage.classList.add("btn", "btn-intro");
-  choosePassage.innerText = passage.title;
+  if (passage.title === "") {
+    choosePassage.innerText = passage.date;
+  } else {
+    choosePassage.innerText = passage.date + " — " + passage.title;
+  }
   introElement.appendChild(choosePassage);
   choosePassage.addEventListener("click", () => {
     currentPassage = passage;
