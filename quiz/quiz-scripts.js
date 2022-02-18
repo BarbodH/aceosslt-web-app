@@ -11,7 +11,7 @@ const passageElement = document.getElementById("passage");
 const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-buttons");
 const progressBarElement = document.getElementById("progress-bar");
-const pbItemElements = document.getElementById("pb-list").querySelectorAll("li");
+const pbListElement = document.getElementById("pb-list");
 const resultContainerElement = document.getElementById("result-container");
 const resultElement = document.getElementById("result");
 const CHART = document.getElementById("doughnutChart");
@@ -29,22 +29,33 @@ passages.forEach((passage) => {
     currentPassage = passage;
     answers = Array(passage.questions.length).fill(false);
     answersText = Array(passage.questions.length).fill("");
+    initializeProgressBarItems();
     startQuiz();
   })
 });
 
-// define functionality of each button in progress bar
-pbItemElements.forEach(item => {
-  // handle selection
-  item.addEventListener("click", () => {
-    if (item.innerText === "P") {
-      showPassage();
-    } else {
-      currentQuestionIndex = parseInt(item.innerText) - 1;
-      setNextQuestion();
-    }
-  })
-});
+function initializeProgressBarItems() {
+  for (let i = 0; i < currentPassage.questions.length; i++) {
+    const pbItem = document.createElement("li");
+    pbItem.innerText = i + 1;
+    pbItem.classList.add("pb-item", "question-nav");
+    pbListElement.appendChild(pbItem);
+  }
+  // define functionality of each button in progress bar
+  pbListElement.querySelectorAll("li").forEach(item => {
+    // handle selection
+    item.addEventListener("click", () => {
+      if (item.innerText === "P") {
+        showPassage();
+      } else {
+        currentQuestionIndex = parseInt(item.innerText) - 1;
+        setNextQuestion();
+      }
+    })
+  });
+}
+
+
 
 nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
@@ -224,7 +235,7 @@ function hideAll() {
 }
 
 function updateProgressBar() {
-  pbItemElements.forEach(item => {
+  pbListElement.querySelectorAll("li").forEach(item => {
     if (item.innerText === (currentQuestionIndex + 1).toString()) {
       item.classList.add("active-pb-item");
     } else if (item.innerText !== "P") {
