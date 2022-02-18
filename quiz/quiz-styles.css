@@ -18,6 +18,7 @@
 
 .container {
   width: 800px;
+  max-height: 78vh;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -26,6 +27,7 @@
   border-radius: 5px;
   padding: 10px;
   box-shadow: 0 0 10px 2px;
+  overflow-y: auto;
 }
 
 .container p {
