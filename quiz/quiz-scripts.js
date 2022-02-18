@@ -110,7 +110,7 @@ function showPassage() {
     const title = document.createElement("h1");
     const text = document.createElement("p");
     title.innerText = currentPassage.title;
-    text.innerText = currentPassage.passageText;
+    text.innerHTML = currentPassage.passageText;
     passageElement.appendChild(title);
     passageElement.appendChild(text);
   }
@@ -128,7 +128,7 @@ function setNextQuestion() {
 }
 
 function showQuestion(currentQuestion) {
-  questionElement.innerText = (currentQuestionIndex + 1) + ") " + currentQuestion.question;
+  questionElement.innerHTML = (currentQuestionIndex + 1) + ") " + currentQuestion.question;
   currentQuestion.answers.forEach((answer) => {
     const button = document.createElement("button");
     button.innerText = answer.text;
