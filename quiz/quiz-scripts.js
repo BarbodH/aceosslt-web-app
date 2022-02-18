@@ -33,7 +33,9 @@ passages.forEach((passage) => {
   })
 });
 
+// define functionality of each button in progress bar
 pbItemElements.forEach(item => {
+  // handle selection
   item.addEventListener("click", () => {
     if (item.innerText === "P") {
       showPassage();
@@ -65,7 +67,7 @@ passageButton.addEventListener("click", () => {
 submitButton.addEventListener("click", () => {
   // display final result following submission
   calculateScore(answers);
-  let pieChart = new Chart(CHART, {
+  let donutChart = new Chart(CHART, {
     type: "doughnut",
     data: {
       datasets: [
@@ -115,7 +117,7 @@ function setNextQuestion() {
 }
 
 function showQuestion(currentQuestion) {
-  questionElement.innerText = currentQuestion.question;
+  questionElement.innerText = (currentQuestionIndex + 1) + ") " + currentQuestion.question;
   currentQuestion.answers.forEach((answer) => {
     const button = document.createElement("button");
     button.innerText = answer.text;
@@ -181,11 +183,13 @@ function setDisplay(stage) {
     questionContainerElement.classList.remove("hide");
     passageElement.classList.remove("hide");
     proceedButton.classList.remove("hide");
+    updateProgressBar();
   } else if (stage === "question") {
     hideAll();
     questionContainerElement.classList.remove("hide");
     questionElement.classList.remove("hide");
     answerButtonsElement.classList.remove("hide");
+    updateProgressBar();
     if (currentQuestionIndex === 0) { // first question
       passageButton.classList.remove("hide");
       nextButton.classList.remove("hide");
@@ -217,4 +221,14 @@ function hideAll() {
   proceedButton.classList.add("hide");
   passageButton.classList.add("hide");
   submitButton.classList.add("hide");
+}
+
+function updateProgressBar() {
+  pbItemElements.forEach(item => {
+    if (item.innerText === (currentQuestionIndex + 1).toString()) {
+      item.classList.add("active-pb-item");
+    } else if (item.innerText !== "P") {
+      item.classList.remove("active-pb-item");
+    }
+  });
 }
