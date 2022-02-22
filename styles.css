@@ -166,10 +166,17 @@ button:hover {
 }
 
 input[type="submit"] {
-    background-color: hsl(260, 60%, 50%);
+    background-color: hsl(260, 80%, 45%);
     color: white;
     width: 300px;
     border-radius: 20px;
     padding: 10px;
     margin: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: hsl(260, 60%, 50%);
+    box-shadow: 0 0 20px hsl(260, 60%, 50%);
 }
