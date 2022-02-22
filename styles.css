@@ -124,3 +124,52 @@ button:hover {
 .about p {
     margin: 10px auto;
 }
+
+.contact-container {
+    display: grid;
+    grid-column-gap: 25px;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white;
+}
+
+.contact-us-info {
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+    grid-column: span 2;
+}
+
+.contact-us-info h2 {
+    font-size: 18px;
+}
+
+.mail-img {
+    width: 250px;
+    height: 250px;
+}
+
+.contact-form-item {
+    width: 300px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    border: none;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+input[type="submit"] {
+    background-color: hsl(260, 60%, 50%);
+    color: white;
+    width: 300px;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+}
