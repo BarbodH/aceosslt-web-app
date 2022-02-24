@@ -159,12 +159,59 @@ button:hover {
 .about {
     width: 100%;
     position: absolute;
-    top: 50%;
+    top: 20%;
     transform: translateY(-50%);
     text-align: center;
     color: white;
+    font-size: xx-large;
 }
 
+.mission-container{
+    max-height: 78vh;
+    width: 90%;
+    position: absolute;
+    left: 50%;
+    top: 150%;
+    transform: translate(-50%);
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+    overflow-y: auto;
+    font-size: large;
+}
+
+.developer-container{
+    display: flex;
+    flex-direction: row;
+    order: 2;
+    width: 96%;
+    position: absolute;
+    left: 50%;
+    top: 400%;
+    transform: translate(-50%);
+    color: black;
+    overflow-y: auto;
+    font-size: large;
+}
+.developers{
+    color: black;
+    background-color: white;
+    width: 90%;
+    margin: 30px;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 0 0 10px 2px;
+}
+
+.tabs{
+    color:white;
+    position: relative;
+    
+}
 .about p {
     margin: 10px auto;
 }
