@@ -5,24 +5,28 @@
 }
 
 footer {
-    background: black;
+    background: hsl(200, 5%, 10%);
     height: auto;
     text-align: center;
-}
-
-footer h3 {
+    padding: 20px;
     color: white;
 }
 
-footer p {
-    font-size: 10px;
-    color: white;
-    padding: 10px;
+footer hr {
+    margin-bottom: 1rem;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid gray;
 }
 
-footer p a:hover {
-    cursor: pointer;
-    color:hsl(260, 30%, 50%);
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+footer a:hover {
+    color:hsl(276, 100%, 73%);
     transition: 0.5s;
 }
 
@@ -40,23 +44,8 @@ footer p a:hover {
 }
 
 .media-links-container a:hover {
-    color: black;
+    color: hsl(276, 100%, 73%);
     transition: 0.5s;
-}
-
-.fa-instagram {
-    background-color: pink;
-    color: white;
-}
-
-.fa-google {
-    background-color: red;
-    color: white;
-}
-
-.fa-linkedin {
-    background-color: blue;
-    color: white;
 }
 
 .banner {
