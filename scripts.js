@@ -11,6 +11,5 @@ googleLink.addEventListener("click", () => {
 });
 
 linkedinLink.addEventListener("click", () => {
-  console.log("I'm clicked!");
   window.open("https://www.linkedin.com/company/aceosslt");
 });
