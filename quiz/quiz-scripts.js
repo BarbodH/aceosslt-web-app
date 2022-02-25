@@ -187,7 +187,7 @@ function calculateScore(answers) {
     }
   }
   score = (correctAnswers / answers.length) * 100;
-  scoreVariable.innerText = score + "%";
+  scoreVariable.innerText = (Math.round(score * 10) / 10) + "%"; // round score to 1 decimal place
   numQuestionsVariable.innerText = currentPassage.questions.length;
   numCorrectVariable.innerText = correctAnswers;
 }
