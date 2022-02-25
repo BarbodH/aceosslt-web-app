@@ -43,6 +43,11 @@ footer a:hover {
     text-decoration: none;
 }
 
+.media-links-container .fa {
+    text-decoration: none;
+    color:hsl(260, 80%, 45%);
+}
+
 .media-links-container a:hover {
     color: hsl(276, 100%, 73%);
     transition: 0.5s;
