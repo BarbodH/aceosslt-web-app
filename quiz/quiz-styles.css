@@ -30,8 +30,14 @@
   overflow-y: auto;
 }
 
-.container p {
+.container var {
+  font-style: normal;
+  font-weight: bold;
+}
+
+.passage p {
   padding-bottom: 15px;
+  text-indent: 5%;
 }
 
 .navbar {
@@ -62,7 +68,7 @@
   text-decoration: none;
   color: black;
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: upperxse;
 }
 
 .navbar ul li::after {
@@ -143,9 +149,9 @@
 }
 
 #doughnutChart {
-  max-height: 200px;
+  max-height: 150px;
   height: 70%;
-  min-height: 200px;
+  min-height: 150px;
 }
 
 .progress-bar {

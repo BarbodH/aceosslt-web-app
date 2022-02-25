@@ -1,5 +1,6 @@
 import { passages } from "../questionbanks/question-bank.js";
 
+const containerElement = document.getElementById("container");
 const nextButton = document.getElementById("next-btn");
 const prevButton = document.getElementById("prev-btn");
 const proceedButton = document.getElementById("proceed-btn");
@@ -13,8 +14,10 @@ const answerButtonsElement = document.getElementById("answer-buttons");
 const progressBarElement = document.getElementById("progress-bar");
 const pbListElement = document.getElementById("pb-list");
 const resultContainerElement = document.getElementById("result-container");
-const resultElement = document.getElementById("result");
 const CHART = document.getElementById("doughnutChart");
+const scoreVariable = document.getElementById("score");
+const numQuestionsVariable = document.getElementById("num-questions");
+const numCorrectVariable = document.getElementById("num-correct");
 
 // declare global variables
 let shuffledQuestions, currentQuestionIndex, score, currentPassage, answers, answersText;
@@ -59,8 +62,6 @@ function initializeProgressBarItems() {
   });
 }
 
-
-
 nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
   setNextQuestion();
@@ -96,7 +97,9 @@ submitButton.addEventListener("click", () => {
     options: {
       animation: {
         animateScale: true
-      }
+      },
+      circumference: 180,
+      rotation: 270
     }
   });
   showResult(score);
@@ -112,18 +115,21 @@ function startQuiz() {
 function showPassage() {
   if (passageElement.firstChild == null) {
     const title = document.createElement("h1");
-    const text = document.createElement("p");
     title.innerText = currentPassage.title;
-    text.innerHTML = currentPassage.passageText;
-    passageElement.appendChild(title);
-    passageElement.appendChild(text);
+    passageElement.append(title);
+    const paragraphArray = currentPassage.passageText.split("\n");
+    paragraphArray.forEach(item => {
+      const paragraph = document.createElement("p");
+      paragraph.innerHTML = item;
+      passageElement.appendChild(paragraph);
+    });
   }
   setDisplay("passage");
 }
 
 function showResult(score) {
-  resultElement.innerText = score + "%";
-  setDisplay("result")
+  containerElement.style.width = "600px";
+  setDisplay("result");
 }
 
 function setNextQuestion() {
@@ -179,6 +185,9 @@ function calculateScore(answers) {
     }
   }
   score = (correctAnswers / answers.length) * 100;
+  scoreVariable.innerText = score + "%";
+  numQuestionsVariable.innerText = currentPassage.questions.length;
+  numCorrectVariable.innerText = correctAnswers;
 }
 
 // Fisher-Yates algorithm - shuffle the array of questions
