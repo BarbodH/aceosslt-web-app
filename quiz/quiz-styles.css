@@ -68,7 +68,7 @@
   text-decoration: none;
   color: black;
   font-weight: bold;
-  text-transform: upperxse;
+  text-transform: uppercase;
 }
 
 .navbar ul li::after {
